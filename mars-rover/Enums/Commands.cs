@@ -6,9 +6,9 @@ namespace mars_rover.Enums
 {
     public enum Commands
     {
-        ///<summary>Look Right</summary>
+        ///<summary>Rotate Right</summary>
         R = 0,
-        ///<summary>Look Left</summary>
+        ///<summary>Rotate Left</summary>
         L = 1,
         ///<summary>Move</summary>
         M = 2,
