@@ -6,7 +6,7 @@ using System.Text;
 
 namespace mars_rover.Classes
 {
-    class Rover : IRover
+    public class Rover : IRover
     {
         public int CoordX { get; set; }
         public int CoordY { get; set; }
@@ -43,16 +43,18 @@ namespace mars_rover.Classes
                         break;
                 }
             }
+        }
 
+        public string GetPosition()
+        {
             if (!IsInPlateau())
-                Console.WriteLine("Rover is out of boundaries. Rover is lost.");
-
-            Console.WriteLine(CoordX + " " + CoordY + " " + Direction);
+                return("Rover is out of boundaries. Rover is lost.");
+            return CoordX + " " + CoordY + " " + Direction;
         }
 
         public bool IsInPlateau()
         {
-            return CoordX >= 0 && CoordX < Plateau.UpperRightCoordX && CoordY >= 0 && CoordY < Plateau.UpperRightCoordY;
+            return CoordX >= 0 && CoordX <= Plateau.UpperRightCoordX && CoordY >= 0 && CoordY <= Plateau.UpperRightCoordY;
         }
 
         private void Move()

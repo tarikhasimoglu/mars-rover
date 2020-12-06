@@ -7,12 +7,12 @@ namespace mars_rover.Interfaces
 {
     public interface IRover
     {
-
         public int CoordX { get; }
         public int CoordY { get; }
         public Directions Direction { get; }
         public IPlateau Plateau { get; }
         public bool IsInPlateau();
+        public string GetPosition();
         public void ExecuteNASACommand(string command);
     }
 }

@@ -25,7 +25,6 @@ namespace mars_rover
                 int roverCoordY = Int32.Parse(roverInfo[1]);
                 Directions roverDirection = Enum.Parse<Directions>(roverInfo[2]);
 
-
                 Rover rover = new Rover(plateau, roverCoordX, roverCoordY, roverDirection);
                 if (!rover.IsInPlateau())
                 {
@@ -36,6 +35,7 @@ namespace mars_rover
                 Console.Write("Please enter a command:");
                 string NASACommand = Console.ReadLine();
                 rover.ExecuteNASACommand(NASACommand);
+                Console.WriteLine(rover.GetPosition());
             }
         }
     }
